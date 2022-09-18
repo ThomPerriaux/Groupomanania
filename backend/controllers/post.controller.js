@@ -19,8 +19,7 @@ exports.createPost = (req, res) => {
           minute: 'numeric',
           second: 'numeric',
      })
-     console.log(publiDate);
-
+ 
      const post = new Post({
           ...postObjet,
           userId: req.auth.userId,

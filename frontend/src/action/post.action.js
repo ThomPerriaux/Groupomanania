@@ -37,15 +37,12 @@ export const addPost = (data) => {
 }
 
 export const editPost = (editedPost) => {
-    console.log(editedPost);
-    console.log(editedPost.id);
     return (dispatch) => {
         return axios
             .put(`http://localhost:3001/api/profile/${editedPost.id}` ,editedPost.message,
             {headers: { Authorization: `Bearer ${token}`}}
             )
             .then((res) => {
-                console.log(res);
                 dispatch({ type: EDIT_POST, payload: {res}})
                 
             })
@@ -54,7 +51,6 @@ export const editPost = (editedPost) => {
 }
 
 export const deletePost = (postId) => {
-console.log(postId);
     return (dispatch) => {
         return axios
             .delete(`http://localhost:3001/api/profile/${postId}`, {

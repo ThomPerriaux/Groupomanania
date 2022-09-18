@@ -23,8 +23,7 @@ const Post = ({ post }) => {
             message: editMessage,
         }
         dispatch(editPost(editedPost))
-        console.log(editedPost);
-        setEditToggle(false)
+         setEditToggle(false)
     }
 
     return (

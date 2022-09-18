@@ -10,9 +10,13 @@ const Like = ({ post }) => {
     const currentUser = Cookies.get('currentUser')
     const likesArray = post.usersLiked
     const dispatch = useDispatch()
+
+    const likeItOrNot = () => {
+        if(likesArray.includes(currentUser)) {setHasLiked(true)}
+       }
+       useEffect(()=>{likeItOrNot()})
     
        const handleLike = (e)=> {
-        e.preventDefault();
         const likeDetails = {
               _id: post._id, //id du post
               usersLiked: currentUser, //id du liker
