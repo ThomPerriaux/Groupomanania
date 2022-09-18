@@ -39,7 +39,7 @@ export const addPost = (data) => {
 export const editPost = (editedPost) => {
     return (dispatch) => {
         return axios
-            .put(`http://localhost:3001/api/profile/${editedPost.id}` ,editedPost.message,
+            .put(`http://localhost:3001/api/profile/${editedPost.id}` ,editedPost,
             {headers: { Authorization: `Bearer ${token}`}}
             )
             .then((res) => {

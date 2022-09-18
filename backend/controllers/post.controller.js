@@ -66,8 +66,8 @@ exports.deletePost = (req, res) => {
 }
 
 exports.modifyPost = (req, res) => {
-      const postObjet = req
-      console.log(req)
+      const postObjet = req.body
+      console.log(req.body)
           //  ? {
           //        ...JSON.parse(req.body.post),
           //         imageUrl: `${req.protocol}://${req.get('host')}/images/${

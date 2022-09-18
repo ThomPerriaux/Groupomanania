@@ -13,7 +13,7 @@ const Post = ({ post }) => {
     const dispatch = useDispatch()
 
     const currentUser = Cookies.get('currentUser')
-    const admin = '631ef449275dab2a3037fde7'
+    const admin = '631ef449275dab2a3037fde7'// a comparer avec pseudo 
 
     const handleEdit = (e) => {
         e.preventDefault();

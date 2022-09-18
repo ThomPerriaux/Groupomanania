@@ -4,14 +4,20 @@ import { useDispatch } from 'react-redux'
 import { addPost, getPosts } from '../../action/post.action'
 import '../../style/_postForm.scss'
 
+
 const PostForm = () => {
+
+
     const [message, setMessage] = useState('')
-    const [imageUrl, setImageUrl] = useState('')
+    const [imageUrl, setImageUrl] = useState(null)
     const pseudo = Cookies.get('pseudo')
     const dispatch = useDispatch()
 
+
     const handleForm = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+
+        console.log(e);
 
         const data = new FormData()
         data.append('message', message)
@@ -19,11 +25,11 @@ const PostForm = () => {
         if (imageUrl){
            data.append('picture', imageUrl) 
         }
-        
 
         dispatch(addPost(data))
         setMessage('')
-        setImageUrl('')
+        e.target[1].value = null;
+        setImageUrl(null)
         dispatch(getPosts())
     }
 
