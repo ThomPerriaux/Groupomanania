@@ -1,0 +1,27 @@
+@import './index.scss';
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: $terColor;
+    border-radius: 10px;
+    
+     button i{
+        font-size: 20px;
+        &:hover{
+            font-size: 30px;
+            color: $secColor;
+            border: none;
+        }
+    }
+
+    h1{
+        color: white;
+        text-align: justify;
+    }
+    
+}
+

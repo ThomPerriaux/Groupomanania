@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+
+
+
+//variables : 
+ $primColor: #fd2d01;
+ $secColor: #ffd7d7;
+ $terColor: #4e5166;
+
+body{
+    width: 95%;
+    margin: auto;
+    padding: 5px;
+}
+
+*{
+    font-family: 'Lato',sans-serif;
+}
+
+button{
+    border: 1px solid $terColor;
+    background-color: $terColor;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover{
+    padding: 8px;
+    background-color: $terColor;
+    color: white;
+    }
+}
+
+textarea {
+    width: 90%;
+    border: $secColor 3px solid;
+    border-radius: 10px;
+    margin: 10px auto;
+}

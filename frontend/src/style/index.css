@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
+body {
+  width: 95%;
+  margin: auto;
+  padding: 5px;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+button {
+  border: 1px solid #4e5166;
+  background-color: #4e5166;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+button:hover {
+  padding: 8px;
+  background-color: #4e5166;
+  color: white;
+}
+
+textarea {
+  width: 90%;
+  border: #ffd7d7 3px solid;
+  border-radius: 10px;
+  margin: 10px auto;
+}/*# sourceMappingURL=index.css.map */
