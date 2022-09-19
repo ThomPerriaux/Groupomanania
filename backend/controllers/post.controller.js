@@ -68,14 +68,6 @@ exports.deletePost = (req, res) => {
 exports.modifyPost = (req, res) => {
       const postObjet = req.body
       console.log(req.body)
-          //  ? {
-          //        ...JSON.parse(req.body.post),
-          //         imageUrl: `${req.protocol}://${req.get('host')}/images/${
-          //              req.file.filename
-          //         }`,
-          //   }
-          //  : { ...req.body }
-     //delete postObjet._userId
      Post
           .findOne({ _id: req.params.id })
           .then((post) => {

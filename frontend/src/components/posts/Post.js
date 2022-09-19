@@ -13,7 +13,7 @@ const Post = ({ post }) => {
     const dispatch = useDispatch()
 
     const currentUser = Cookies.get('currentUser')
-    const admin = '631ef449275dab2a3037fde7'// a comparer avec pseudo 
+    const pseudo = Cookies.get ('pseudo')
 
     const handleEdit = (e) => {
         e.preventDefault();
@@ -49,7 +49,7 @@ const Post = ({ post }) => {
 
             {/* gestion des editions suppressions */}
             {((!isEmpty(currentUser) && currentUser === post.userId) ||
-                (!isEmpty(currentUser) && currentUser === admin)) && (
+                (!isEmpty(currentUser) && pseudo === "Admin")) && (
                 <div className="post-option">
                     <div className="post-edit">
                         <button className="edit-delete-btn">
