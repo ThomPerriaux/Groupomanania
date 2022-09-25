@@ -60,9 +60,10 @@ const Signup = () => {
                     />
                     <br />
 
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Adresse email</label>
                     <br />
                     <input
+                        placeholder='prénom.nom@groupamania.com'
                         type="email"
                         name="email"
                         id="email"
