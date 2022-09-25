@@ -7,7 +7,6 @@ import '../../style/_postForm.scss'
 
 const PostForm = () => {
 
-
     const [message, setMessage] = useState('')
     const [imageUrl, setImageUrl] = useState(null)
     const pseudo = Cookies.get('pseudo')
