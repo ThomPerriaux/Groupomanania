@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <>
             <div className="header">
-                {/* <img src="./globe.png" alt="logo" /> */}
+                <img src="./icon-left-font-monochrome-white.svg" alt="" />
                 <h1>Bienvenue {pseudo} 🙂</h1>
                 <button onClick={(e) => handleLogOut(e)}><i className="fi fi-br-exit" alt="LogOut"></i></button>
             </div>

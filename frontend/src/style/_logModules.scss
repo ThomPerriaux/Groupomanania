@@ -13,8 +13,17 @@ form{
         font-style: italic;
         font-size: 15px;
     }
-
     input{
         width: 60%;
     }
+}
+
+.success{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    border: solid 5px $secColor;
+    margin: 5px;
+    border-radius: 20px;
 }

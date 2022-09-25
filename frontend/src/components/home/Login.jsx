@@ -34,7 +34,7 @@ const Login = () => {
           <form action="" onSubmit={handleLogin} id="login-form">
                <label htmlFor="email">Email</label>
                <input
-                    placeholder="Email communiqué lors de l'inscription et au format xx@ww.zz"
+                    placeholder="prénom.nom@groupomania.com"
                     type="email"
                     name="email"
                     id="email"
