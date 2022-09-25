@@ -1,12 +1,11 @@
 import Cookies from 'js-cookie'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addPost, getPosts } from '../../action/post.action'
+import { addPost } from '../../action/post.action'
 import '../../style/_postForm.scss'
 
 
 const PostForm = () => {
-
 
     const [message, setMessage] = useState('')
     const [imageUrl, setImageUrl] = useState(null)
@@ -22,15 +21,12 @@ const PostForm = () => {
         const data = new FormData()
         data.append('message', message)
         data.append('pseudo', pseudo)
-        if (imageUrl){
-           data.append('picture', imageUrl) 
-        }
+        data.append('picture', imageUrl) 
 
         dispatch(addPost(data))
         setMessage('')
         e.target[1].value = null;
         setImageUrl(null)
-        dispatch(getPosts())
     }
 
     return (
