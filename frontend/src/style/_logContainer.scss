@@ -24,3 +24,14 @@
         padding: 10px;
     }
 }
+
+.active-btn{
+        font-size: 20px;
+        font-weight: bold;
+        border: 1px solid $secColor;
+        background-color: $secColor;
+        color: $terColor;
+        border-radius: 10px;
+        padding: 5px;
+
+}

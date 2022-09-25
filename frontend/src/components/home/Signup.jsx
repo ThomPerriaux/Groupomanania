@@ -17,21 +17,25 @@ const Signup = () => {
           if (password !== controlpassword) {
                alert('🚨 Les mots de passe ne correspondent pas!')
           } else {
+               //email géré par Regex dans le userModel. Seules les adresses @groupomania sont autorisées
                axios.post('http://localhost:3001/api/auth/signup', {
-                    email,
+                    email, 
                     password,
                     pseudo,
                })
                     .then(() => {
+                         //enregistrement ok envoi sur la page de logIn
                          setFormSumbit(true)
                     })
                     .catch((err) => {
                          if (err.response.data.error.errors.pseudo) {
                               alert(
+                                   //on ne précise pas que le pseudo est déjà présent
                                    'Pseudo non autorisé ou dejà utilisé, veuillez en choisir un autre 👀'
                               )
                          } else if (err.response.data.error.errors.email) {
                               alert(
+                                   //on n'indique pas si l'utilisateur est déjà enregistré
                                    'Adresse email non autorisée ou dejà utilisée, veuillez en choisir une autre 👀'
                               )
                          }
@@ -52,6 +56,9 @@ const Signup = () => {
                          </div>
                     </>
                ) : (
+                    //A validation du formulaire :
+                    //1.on recupere le pseudo et le mail qui doivent être uniques et le mail conforme
+                    //2.on verifie que les passwords correspondent
                     <form action="" onSubmit={handleSignup} id="signup-form">
                          <label htmlFor="pseudo">Pseudo</label>
                          <br />

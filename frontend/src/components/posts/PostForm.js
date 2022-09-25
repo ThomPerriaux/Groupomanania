@@ -4,26 +4,26 @@ import { useDispatch } from 'react-redux'
 import { addPost } from '../../action/post.action'
 import '../../style/_postForm.scss'
 
+//Creation d'un post
+
 const PostForm = () => {
-     const [message, setMessage] = useState('')
-     const [imageUrl, setImageUrl] = useState(null)
+     const [message, setMessage] = useState('') //valeur récupérée dans la textArea
+     const [imageUrl, setImageUrl] = useState(null) //valeur récupérée si req.file (lien d'une image stockée dans le back
      const pseudo = Cookies.get('pseudo')
-     const dispatch = useDispatch()
+     const dispatch = useDispatch() //methode dispatch de Redux
 
      const handleForm = (e) => {
           e.preventDefault()
-
-          console.log(e)
 
           const data = new FormData()
           data.append('message', message)
           data.append('pseudo', pseudo)
           data.append('picture', imageUrl)
 
-          dispatch(addPost(data))
-          setMessage('')
-          e.target[1].value = null
-          setImageUrl(null)
+          dispatch(addPost(data)) //dispatch de data via addPost (action)
+          setMessage('') //réinitialisation de la text area
+          e.target[1].value = null ////réinitialisation du req.file
+          setImageUrl(null) ////réinitialisation de imageUrl
      }
 
      return (
@@ -38,14 +38,15 @@ const PostForm = () => {
                     ></textarea>
 
                     <input
-                         accept=".png, .jpg, .jpeg, .webp"
+                         accept=".png, .jpg, .jpeg, .webp" //seuls ces formats sont autorisés
                          className="pick-a-file"
                          type="file"
                          onChange={(e) => setImageUrl(e.target.files[0])}
-                         required={false}
+                         required={false} //l'image n'est pas requise
                     />
 
                     <label htmlFor="file">
+                         {/* Indication sur les formats autorisés */}
                          Formats acceptés .jpg .jpeg .png .webp
                     </label>
 

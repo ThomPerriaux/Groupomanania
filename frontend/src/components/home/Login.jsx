@@ -3,14 +3,16 @@ import axios from 'axios'
 import '../../style/_logModules.scss'
 import Cookies from 'js-cookie'
 
+//logique de connexion
 const Login = () => {
      const [email, setEmail] = useState('')
      const [password, setPassword] = useState('')
 
      const handleLogin = (e) => {
-          e.preventDefault()
+          e.preventDefault() //empeche la page de se recharger par defaut
 
-          axios.post('http://localhost:3001/api/auth/login', {
+          //envoi au back de l'email et du password entré
+          axios.post('http://localhost:3001/api/auth/login', { 
                email,
                password,
           })
@@ -18,6 +20,7 @@ const Login = () => {
                     if (res.data.error) {
                          alert('Utilisateur non trouvé!')
                     } else {
+                         //succès : token-pseudo-utilisateur loggé enregistré dans un cookie puis redirection vers la page des posts
                          Cookies.set('token', res.data.token)
                          Cookies.set('pseudo', res.data.pseudo)
                          Cookies.set('currentUser', res.data.userId)
@@ -26,12 +29,15 @@ const Login = () => {
                })
                .catch((err) => {
                     console.log(err)
-                    alert('Combinaison email & mot de passe invalide 🙈 ')
+                    //erreur de logIn : pour des questions de confidentialité on ne dit pas "email non trouvé ou password invalide"
+                    //email non trouvé = utilsateur non enregistré
+                    //password erronné = utilisateur enregistré
+                    alert('Combinaison email & mot de passe invalide 🙈 ') 
                })
      }
 
      return (
-          <form action="" onSubmit={handleLogin} id="login-form">
+          <form action="" onSubmit={handleLogin} id="login-form"> 
                <label htmlFor="email">Email</label>
                <input
                     placeholder="prenom.nom@groupomania.com"

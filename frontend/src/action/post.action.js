@@ -26,6 +26,8 @@ export const getPosts = () => {
 
 //Ajouter un post
 export const addPost = (data) => {
+    //on récupère la data via le dispatch
+    //la data est envoyée au back puis la réponse est traitée suivant les instructions du reducer
     return (dispatch) => {
         return axios
             .post('http://localhost:3001/api/profile',data, {
@@ -69,12 +71,15 @@ export const deletePost = (postId) => {
 
 //logique des Like
 export const like = (data) => {
+    console.log(data);
+    //data = id du post & id du liker sont envoyés au back
     return (dispatch) => {
         return axios
             .post(`http://localhost:3001/api/profile/${data._id}/like`,data,{
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((res) => {
+                //l'id du liker reçu du back est dispatché au reducer via le payload
                 dispatch({ type: LIKE, payload: {res}})
             })
             .catch((err) => console.log(err))

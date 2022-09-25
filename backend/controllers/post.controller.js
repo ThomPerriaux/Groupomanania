@@ -121,18 +121,20 @@ exports.getAllPosts = (req, res) => {
 //GESTION DES LIKES//
 //Verif du currentUser : si a dejà liké => on le soustrait du tableau / sinon on l'ajoute
 exports.likePost = (req, res) => {
-
+//reçoit l'_id et le usersLiked (user ayant liké)
      Post.findOne({ _id: req.params.id })
           .then((post) => {
                if (post.usersLiked.includes(req.auth.userId)) {
-
+                    //si cet user a dejà liké alors
                     //dislike
+                    //on update la bdd puis on renvoie une réponse au back
                     Post.updateOne(
                          { _id: req.params.id },
                          { $pull: { usersLiked: req.auth.userId } } //usersLiked :array reprenant les userID likant le post
                     )
                          .then(() => {
                               res.status(200).json({
+                                   //on renvoie la liste des likers excepté ceux qui ne sont pas dans la requete
                                    likers: post.usersLiked.filter((c) => c !== req.auth.userId),
                                    _id: req.params.id,
                               })
