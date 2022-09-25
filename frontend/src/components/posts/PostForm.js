@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addPost, getPosts } from '../../action/post.action'
+import { addPost } from '../../action/post.action'
 import '../../style/_postForm.scss'
 
 
@@ -17,6 +17,8 @@ const PostForm = () => {
     const handleForm = (e) => {
         e.preventDefault();
 
+        console.log(e);
+
         const data = new FormData()
         data.append('message', message)
         data.append('pseudo', pseudo)
@@ -26,7 +28,6 @@ const PostForm = () => {
         setMessage('')
         e.target[1].value = null;
         setImageUrl(null)
-        dispatch(getPosts())
     }
 
     return (
