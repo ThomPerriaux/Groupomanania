@@ -1,10 +1,12 @@
 const jwt = require('jsonwebtoken')
 
+//gestion du token
 module.exports = (req, res, next) => {
      try {
-          const token = req.headers.authorization.split(' ')[1]
-          const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET')
-          const userId = decodedToken.userId
+          const token = req.headers.authorization.split(' ')[1] //la partie du token récupérée est celle après l'espace
+          const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET') //on verifie le token et la clé de cryptage
+          console.log(decodedToken);
+          const userId = decodedToken.userId //emet un userID et renseigne aussi sur l'expiration
           req.auth = {
                userId: userId,
           }
