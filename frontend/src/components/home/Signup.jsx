@@ -23,8 +23,7 @@ const Signup = () => {
                     password,
                     pseudo,
                 })
-                .then((res) => {
-                  console.log(res)
+                .then(() => {
                   setFormSumbit(true)
                 })
                 .catch((err) => {

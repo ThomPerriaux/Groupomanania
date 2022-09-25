@@ -11,7 +11,6 @@ export default function postReducer(state = initialState, action)
             return [action.payload, ...state]
         case EDIT_POST:
             return state.map((post) => {
-                console.log(action );
                 if (post._id === action.payload.res.data.id){
                     return {
                         ...post,

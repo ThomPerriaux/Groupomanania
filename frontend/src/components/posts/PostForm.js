@@ -17,14 +17,10 @@ const PostForm = () => {
     const handleForm = (e) => {
         e.preventDefault();
 
-        console.log(e);
-
         const data = new FormData()
         data.append('message', message)
         data.append('pseudo', pseudo)
-        if (imageUrl){
-           data.append('picture', imageUrl) 
-        }
+        data.append('picture', imageUrl) 
 
         dispatch(addPost(data))
         setMessage('')

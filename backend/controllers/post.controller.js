@@ -67,8 +67,7 @@ exports.deletePost = (req, res) => {
 
 exports.modifyPost = (req, res) => {
       const postObjet = req.body
-      console.log(req.body)
-     Post
+      Post
           .findOne({ _id: req.params.id })
           .then((post) => {
                if (post._id != req.params.id) {
