@@ -22,7 +22,6 @@ const Like = ({ post }) => {
         const likeDetails = {
               _id: post._id, //id du post
               usersLiked: currentUser, //id du liker
-              likes: post.likes  
         }
         dispatch(like(likeDetails))
     }

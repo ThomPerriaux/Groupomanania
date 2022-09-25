@@ -9,7 +9,6 @@ const upload = multer();
 router.post('/', auth, upload.single("picture"), postControl.createPost);
 router.post('/:id/like', auth, postControl.likePost);
 
-router.get('/:id',auth , postControl.getOnePost);
 router.get('/', auth , postControl.getAllPosts);
 
 router.put('/:id',auth, postControl.modifyPost)

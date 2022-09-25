@@ -33,8 +33,8 @@ const Login = () => {
      return (
           <form action="" onSubmit={handleLogin} id="login-form">
                <label htmlFor="email">Email</label>
-               <br />
                <input
+                    placeholder="Email communiqué lors de l'inscription et au format xx@ww.zz"
                     type="email"
                     name="email"
                     id="email"
@@ -45,6 +45,7 @@ const Login = () => {
                <label htmlFor="password">Mot de passe</label>
                <br />
                <input
+                    placeholder="Mot de passe"
                     type="password"
                     name="password"
                     id="password"
