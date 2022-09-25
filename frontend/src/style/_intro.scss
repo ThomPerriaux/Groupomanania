@@ -9,4 +9,18 @@
     img{
         width: 80%;
     }
+    .intro-content{
+        border: solid 2px $secColor;
+        padding: 5px;
+        margin-bottom:10px ;
+        border-radius: 20px;
+      h2{
+        color: $terColor;
+        } 
+    }
+    
+}
+.feedback{
+    color: $primColor;
+    font-weight: bold;
 }

@@ -10,6 +10,7 @@ export const EDIT_POST = 'EDIT_POST'
 export const DELETE_POST = 'DELETE_POST'
 export const LIKE = "LIKE"
 
+//Recuperer les posts
 export const getPosts = () => {
     return (dispatch) => {
         return axios
@@ -23,6 +24,7 @@ export const getPosts = () => {
     }
 }
 
+//Ajouter un post
 export const addPost = (data) => {
     return (dispatch) => {
         return axios
@@ -36,6 +38,7 @@ export const addPost = (data) => {
     }
 }
 
+//Modifier un post
 export const editPost = (editedPost) => {
     return (dispatch) => {
         return axios
@@ -50,19 +53,21 @@ export const editPost = (editedPost) => {
     }
 }
 
+//Supprimer un post
 export const deletePost = (postId) => {
     return (dispatch) => {
         return axios
             .delete(`http://localhost:3001/api/profile/${postId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             })
-            .then((res) => {
+            .then(() => {
                 dispatch({ type: DELETE_POST, payload: { postId } })
             })
             .catch((err) => console.log(err))
     }
 }
 
+//logique des Like
 export const like = (data) => {
     return (dispatch) => {
         return axios
@@ -71,10 +76,7 @@ export const like = (data) => {
             })
             .then((res) => {
                 dispatch({ type: LIKE, payload: {res}})
-                
             })
-            
             .catch((err) => console.log(err))
     }
 }
-

@@ -67,7 +67,7 @@ const Signup = () => {
                          <label htmlFor="email">Adresse email</label>
                          <br />
                          <input
-                              placeholder="prénom.nom@groupamania.com"
+                              placeholder="prenom.nom@groupomania.com"
                               type="email"
                               name="email"
                               id="email"

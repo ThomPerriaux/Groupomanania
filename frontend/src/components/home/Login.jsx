@@ -34,7 +34,7 @@ const Login = () => {
           <form action="" onSubmit={handleLogin} id="login-form">
                <label htmlFor="email">Email</label>
                <input
-                    placeholder="prénom.nom@groupomania.com"
+                    placeholder="prenom.nom@groupomania.com"
                     type="email"
                     name="email"
                     id="email"
