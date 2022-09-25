@@ -22,10 +22,12 @@ export default function postReducer(state = initialState, action)
         case DELETE_POST:
             return state.filter((post)=>post._id !== action.payload.postId )
         case LIKE:
+            console.log(action)
             return state.map((post) => {
-                if (post._id === action.payload._id){
+                if (post._id === action.payload.res.data._id){
                     return {
-                        usersLiked: action.payload.usersLiked
+                        ...post,
+                        usersLiked: action.payload.res.data.likers
                     }
                 }else{
                     return post

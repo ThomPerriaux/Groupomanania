@@ -8,6 +8,7 @@ exports.createPost = (req, res) => {
 
      let filename = saveImage(req, res)
 
+
      let today = Date.now()
      let publiDay = new Date()
      const publiDate = publiDay.toLocaleString('fr-FR', {
@@ -23,7 +24,7 @@ exports.createPost = (req, res) => {
      const post = new Post({
           ...postObjet,
           userId: req.auth.userId,
-          imageUrl: `${req.protocol}://${req.get('host')}/images/${filename}`,
+          imageUrl: filename? `${req.protocol}://${req.get('host')}/images/${filename}`:null,
           date: today,
           publicationDate: publiDate,
           likes: 0,
@@ -41,7 +42,6 @@ exports.createPost = (req, res) => {
                res.status(400).json({ error })
           })
 }
-
 
 exports.deletePost = (req, res) => {
      Post.findOne({ _id: req.params.id })
@@ -113,7 +113,8 @@ exports.likePost = (req, res) => {
                     )
                          .then(() => {
                               res.status(200).json({
-                                   message: "Je n'aime plus",
+                                   likers : post.usersLiked.filter(c => c !== req.auth.userId),
+                                   _id: req.params.id
                               })
                          })
                          .catch((error) => res.status(400).json({ error }))
@@ -126,8 +127,10 @@ exports.likePost = (req, res) => {
                          }
                     )
                          .then(() => {
+                              post.usersLiked.push(req.auth.userId)
                               res.status(200).json({
-                                   message: "J'aime!",
+                                   likers: post.usersLiked,
+                                   _id: req.params.id
                               })
                          })
                          .catch((error) => res.status(400).json({ error }))
@@ -137,15 +140,13 @@ exports.likePost = (req, res) => {
 }
 
 const saveImage = (req, res) => {
-     //nouveau nom du fichier
-     let fileName = Date.now() + '.jpg'
+     let fileName = null //declare var
 
      if (req.file) {
           try {
-               //verification du format du fichier (s'assurer que c'est une image, et que son format est supporté
-
-               //prevenir les utlisateurs des formats et aussi catcher l'erreur
+          fileName = Date.now() + '.jpg' //utilise
                if (
+
                     req.file.mimetype !== 'image/jpg' &&
                     req.file.mimetype !== 'image/png' &&
                     req.file.mimetype !== 'image/jpeg' &&

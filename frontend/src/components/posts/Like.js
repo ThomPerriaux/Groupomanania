@@ -12,8 +12,10 @@ const Like = ({ post }) => {
     const dispatch = useDispatch()
 
     const likeItOrNot = () => {
-        if(likesArray.includes(currentUser)) {setHasLiked(true)}
-       }
+        console.log(likesArray)
+        if (likesArray.includes(currentUser)) {setHasLiked(true) }
+        else {setHasLiked(false)}} 
+
        useEffect(()=>{likeItOrNot()})
     
        const handleLike = (e)=> {
@@ -22,7 +24,6 @@ const Like = ({ post }) => {
               usersLiked: currentUser, //id du liker
               likes: post.likes  
         }
-        console.log(likeDetails);
         dispatch(like(likeDetails))
     }
     return (

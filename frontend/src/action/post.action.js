@@ -70,7 +70,7 @@ export const like = (data) => {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((res) => {
-                dispatch({ type: LIKE, payload: {data}})
+                dispatch({ type: LIKE, payload: {res}})
                 
             })
             

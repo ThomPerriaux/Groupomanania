@@ -32,7 +32,8 @@ const Post = ({ post }) => {
                 {post.pseudo} a publié le {post.publicationDate}
             </div>
             <div className="post-content">
-                <img src={post.imageUrl} alt="" />
+                {/* si image la div s'affiche */}
+                {post.imageUrl? <img src={post.imageUrl} alt="" /> : null }
                 {editToggle ? (
                     <form onSubmit={(e) => handleEdit(e)}>
                         <textarea
