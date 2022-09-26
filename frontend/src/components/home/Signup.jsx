@@ -71,10 +71,9 @@ const Signup = () => {
                          />
                          <br />
 
-                         <label htmlFor="email">Adresse email</label>
+                         <label htmlFor="email">Adresse email @groupomania.com</label>
                          <br />
                          <input
-                              placeholder="prenom.nom@groupomania.com"
                               type="email"
                               name="email"
                               id="email"
