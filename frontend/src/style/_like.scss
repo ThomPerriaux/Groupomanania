@@ -1,37 +1,14 @@
-@import "./index.scss";
+@import './index.scss';
 
-#liked-btn{
-    color: $primColor;
-    border: none;
-    background: none;
-    font-size: 30px;
-    &:hover{
-    color: $terColor;
-    border: none;
-    background: none;
-    font-size: 20px;
-    }
+#liked-btn {
+     color: $primColor;
+     border: none;
+     background: none;
+     font-size: 30px;
 }
-#notLiked-btn{
-    color: $terColor;
-    border: none;
-    background: none;
-    font-size: 20px;
-    &:hover{
-    color: $primColor;
-    border: none;
-    background: none;
-    font-size: 20px;
-    }
-}
-
-#liked{
-    font-size: 20px;
-    font-weight: normal;
-    color:#E32800 ;
-}
-#not-liked{
-    font-size: 20px;
-    font-weight: normal;
-    color:$terColor ;
+#notLiked-btn {
+     color: $terColor;
+     border: none;
+     background: none;
+     font-size: 20px;
 }
