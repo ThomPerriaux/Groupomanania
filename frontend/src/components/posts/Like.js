@@ -38,11 +38,11 @@ const Like = ({ post }) => {
                {/* si le currentUser aime dejà : coeur rouge / sinon coeur vide */}
                {hasLiked ? (
                     <button id="liked-btn" onClick={(e) => handleLike()} >
-                         <i className="fa-solid fa-heart" id='liked'></i>
+                         <i className="fa-solid fa-heart" ><p id='liked' >J'aime</p></i>
                     </button>
                ) : (
                     <button id="notLiked-btn" onClick={(e) => handleLike()}>
-                         <i className="fa-regular fa-heart"></i>
+                         <i className="fa-regular fa-heart"><p id='not-liked'>Je n'aime pas</p></i>
                     </button>
                )}
           </div>
