@@ -29,15 +29,17 @@ const PostForm = () => {
      return (
           <div className="form-container">
                <form onSubmit={(e) => handleForm(e)}>
+                    <label htmlFor="text">Publiez votre post</label>
                     <textarea
+                         id="text"
                          type="text"
                          rows="7"
                          placeholder="Ecrivez votre post ici ..."
                          value={message}
                          onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
-
                     <input
+                         id="file"
                          accept=".png, .jpg, .jpeg, .webp" //seuls ces formats sont autorisés
                          className="pick-a-file"
                          type="file"

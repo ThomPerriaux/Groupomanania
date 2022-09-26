@@ -19,10 +19,17 @@ const Header = () => {
                <div className="header">
                     <img src="./icon-left-font-monochrome-white.svg" alt="" />
                     <h1>Bienvenue {pseudo} 🙂</h1>
+               </div>
+               <div className="logOut">
                     <button onClick={(e) => handleLogOut(e)}>
-                         <i className="fi fi-br-exit" alt="LogOut"></i>
+                         <i className="fi fi-br-exit" alt="LogOut"
+                         name = "Se déconnecter"
+                         >
+                         Se déconnecter
+                         </i>
                     </button>
                </div>
+               
           </>
      )
 }

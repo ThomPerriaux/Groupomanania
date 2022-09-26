@@ -55,7 +55,7 @@ const Post = ({ post }) => {
 
             {/* gestion des editions suppressions
             Si le current user est l'auteur ou si le current user est l'admin alors les options s'affichent */}
-            {((!isEmpty(currentUser) && currentUser === post.userId) || (!isEmpty(currentUser) && pseudo === "Admin")) && (
+            {((!isEmpty(currentUser) && currentUser === post.userId) || (!isEmpty(currentUser) && pseudo === "Administrator")) && (
                 <div className="post-option">
                     <div className="post-edit">
                         <button className="edit-delete-btn">

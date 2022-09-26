@@ -3,7 +3,7 @@ import '../../style/_intro.scss'
 const Intro = () => {
      return (
           <div className="bloc-intro">
-               <img src="./icon-left-font-mini.png" alt="logo" />
+               <img src="./icon-left-font-mini.png" alt="logoGroupomania" />
                <h1>Bienvenue sur myGroupomania</h1>
                <div className="intro-content">
                     <h2>Votre nouveau réseau social</h2>
