@@ -29,7 +29,7 @@ exports.logIn = (req, res) => {
                if (!user) {
                     return res
                          .status(401)
-                         .json({ error: 'Utilisateur non trouvé !' })
+                         .json({ error: 'Utilisateur non trouvé ou mot de passe incorrect' })
                }
                //si l'user est trouvé on verifie le mdp
                bcrypt

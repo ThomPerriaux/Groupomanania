@@ -1,13 +1,15 @@
+Bienvenue sur le projet Groupomania
+
+
 Pour acceder au projet
 
 Front End : 
 npm start
+puis npm i pour installer les dépendances
 
 Back End : 
 nodemon server
-
-CREDITS :
-Icônes Ui par <a href="https://www.flaticon.com/uicons">Flaticon</a>
+puis npm i pour installer les dépendances
 
 # Getting Started with Create React App
 
