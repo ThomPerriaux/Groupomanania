@@ -6,6 +6,12 @@
      flex-direction: column;
      justify-content: center;
 
+     .bloc-file{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 90%;
+     }
      input {
           border: solid 1px $terColor;
           border-radius: 12px;
@@ -29,5 +35,6 @@
           color: $terColor;
           font-size: 14px;
           font-weight: normal;
+          text-align: center;
      }
 }

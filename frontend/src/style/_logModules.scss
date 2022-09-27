@@ -7,14 +7,17 @@ form{
     label{
         font-weight: bold;
         color: $terColor;
+        text-align: center;
     }
     p{
         color: $primColor;
         font-style: italic;
         font-size: 15px;
+        text-align: center;
     }
     input{
         width: 60%;
+        text-align: center;
     }
 }
 

@@ -1,41 +1,62 @@
 @import './index.scss';
 
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%;
-    margin: auto;
-    border-radius: 20px;
-    padding: 5px;
-    background-color: $terColor;
-    color: white;
-    text-align: center;
-    h1{
-        font-weight: normal;
-        font-size:2vw;
-    }
-    img{
-        width: 30%;
-    }
+.header {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 95%;
+     margin: auto;
+     border-radius: 10px;
+     padding: 10px;
+     background-color: $terColor;
+     color: white;
+     text-align: center;
+     h1 {
+          font-size: 5vw;
+          font-weight: bold;
+     }
+     img {
+          width: 40%;
+     }
 }
 
-.logOut{
-    margin-top: 10px;
-    text-align: right;
-button {
-    border: none;
-    background: $secColor;
-  i{
-    color: $terColor;
-    font-weight: bold;
-    font-size: 15px;
-    &:hover{
-        color: $secColor;
-    }
-}  
+.logOut {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     button {
+          border: none;
+          background: $terColor;
+          i {
+               color: white;
+               font-weight: bold;
+               font-size: 13px;
+               &:hover {
+                    color: $secColor;
+               }
+          }
+     }
 }
 
-
-
+//ecran plus large que 641px
+@media all and (min-width: 641px) {
+     .header {
+          padding: 5px;
+          h1 {
+               font-weight: normal;
+               font-size: 3vw;
+          }
+          img {
+               width: 30%;
+          }
+     }
+     .logOut {
+          width: 90%;
+          button {
+               i {
+                    font-weight: normal;
+                    font-size: 16px;
+               }
+          }
+     }
 }

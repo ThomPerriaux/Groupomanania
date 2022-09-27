@@ -17,19 +17,23 @@ const Header = () => {
      return (
           <>
                <div className="header">
-                    <img src="./icon-left-font-monochrome-white.svg" alt="" />
+                    <div className="logOut">
+                         <img
+                              src="./icon-left-font-monochrome-white.svg"
+                              alt=""
+                         />
+                         <button onClick={(e) => handleLogOut(e)}>
+                              <i
+                                   className="fi fi-br-exit"
+                                   alt="LogOut"
+                                   name="Se déconnecter"
+                              >
+                                   Sortir
+                              </i>
+                         </button>
+                    </div>
                     <h1>Bienvenue {pseudo} 🙂</h1>
                </div>
-               <div className="logOut">
-                    <button onClick={(e) => handleLogOut(e)}>
-                         <i className="fi fi-br-exit" alt="LogOut"
-                         name = "Se déconnecter"
-                         >
-                         Se déconnecter
-                         </i>
-                    </button>
-               </div>
-               
           </>
      )
 }

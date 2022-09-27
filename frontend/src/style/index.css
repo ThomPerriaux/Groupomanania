@@ -28,4 +28,5 @@ textarea {
   border: #ffd7d7 3px solid;
   border-radius: 10px;
   margin: 10px auto;
+  overflow-wrap: normal;
 }/*# sourceMappingURL=index.css.map */

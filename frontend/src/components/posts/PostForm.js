@@ -29,8 +29,9 @@ const PostForm = () => {
      return (
           <div className="form-container">
                <form onSubmit={(e) => handleForm(e)}>
-                    <label htmlFor="text">Publiez votre post</label>
                     <textarea
+                         required={true}
+                         aria-label="Publiez votre post ici"
                          id="text"
                          type="text"
                          rows="7"
@@ -38,23 +39,23 @@ const PostForm = () => {
                          value={message}
                          onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
-                    <input
-                         id="file"
-                         accept=".png, .jpg, .jpeg, .webp" //seuls ces formats sont autorisés
-                         className="pick-a-file"
-                         type="file"
-                         onChange={(e) => setImageUrl(e.target.files[0])}
-                         required={false} //l'image n'est pas requise
-                    />
-
-                    <label htmlFor="file">
-                         {/* Indication sur les formats autorisés */}
-                         Formats acceptés .jpg .jpeg .png .webp
-                    </label>
-
-                    <button type="submit" value="envoyer">
-                         Envoyer
-                    </button>
+                    <div className="bloc-file">
+                         <input
+                              id="file"
+                              accept=".png, .jpg, .jpeg, .webp" //seuls ces formats sont autorisés
+                              className="pick-a-file"
+                              type="file"
+                              onChange={(e) => setImageUrl(e.target.files[0])}
+                              required={false} //l'image n'est pas requise
+                         />
+                         <label htmlFor="file">
+                              {/* Indication sur les formats autorisés */}
+                              Formats acceptés .jpg .jpeg .png .webp
+                         </label>
+                         <button type="submit" value="envoyer">
+                              Envoyer
+                         </button>
+                    </div>
                </form>
           </div>
      )
