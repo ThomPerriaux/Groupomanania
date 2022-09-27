@@ -41,6 +41,7 @@ const Post = ({ post }) => {
                     //Gestion de l'édition
                     <form onSubmit={(e) => handleEdit(e)}>
                         <textarea
+                        className='edit-textarea'
                             rows="10"
                             defaultValue={post.message} //affiche le message
                             onChange={(e) => setEditMessage(e.target.value)}
