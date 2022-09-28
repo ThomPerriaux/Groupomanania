@@ -4,12 +4,15 @@ Bienvenue sur le projet Groupomania
 Pour acceder au projet
 
 Front End : 
+npm i pour installer les dépendances
+puis 
 npm start
-puis npm i pour installer les dépendances
+
 
 Back End : 
 nodemon server
-puis npm i pour installer les dépendances
+puis
+npm i pour installer les dépendances
 
 # Getting Started with Create React App
 
