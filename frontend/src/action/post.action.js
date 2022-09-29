@@ -71,7 +71,6 @@ export const deletePost = (postId) => {
 
 //logique des Like
 export const like = (data) => {
-    console.log(data);
     //data = id du post & id du liker sont envoyés au back
     return (dispatch) => {
         return axios
